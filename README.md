@@ -77,3 +77,21 @@ con.commit() # this will add the data into the database
 print(res.fetchall())
     
 ```
+
+
+## How to delete a row 
+```SQL
+DELETE FROM table_name WHERE column_name = value /* when the value is string then we put value in quotes*/
+```
+
+> Here the DELETE form command is used to tell the database that we want to delete a row from the table.
+
+WHERE is the keyword for conditions, which is used to specify the condition for the rows to be deleted.
+
+
+## How to update a value from a row 
+```SQL
+UPDATE table_name
+SET column1 = value1, column2 = value2, ......, columnN = valueN
+WHERE [Condition] /* Must check the condition very carefully*/
+```
