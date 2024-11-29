@@ -16,13 +16,42 @@ cur = con.cursor()
 # cur.execute("DELETE FROM movie WHERE year = '2000'")
 
 
-cur.execute("""
-            UPDATE movie
-            SET year = 1996
-            WHERE title = 'forrest gumb'
-            """)
+# cur.execute("""
+#             UPDATE movie
+#             SET year = 1996
+#             WHERE title = 'forrest gumb'
+#             """)
 
-res = cur.execute("SELECT * FROM movie")
+# cur.execute("CREATE TABLE student(s_id, s_name, address, s_phone, s_blood_group)")
+
+# cur.execute("INSERT INTO student VALUES ('01', 'AMIT', 'NARINDA', '01533610325', 'A-')")
+
+# cur.execute("INSERT INTO student VALUES ('01', 'PLABON', 'AHMEDBAGH', '01533610183', 'B+')")
+
+# cur.execute("DELETE FROM student WHERE s_id = '01'")
+
+# cur.execute("""
+#             UPDATE student 
+#             SET s_id = '02'
+#             WHERE s_name = 'AMIT'
+#             """)
+
+# cur.execute("""
+#             CREATE TABLE IF NOT EXISTS student(
+#                 s_id integer,
+#                 s_name text,
+#                 address text,
+#                 s_phone text,
+#                 s_blood_group text,
+#                 PRIMARY KEY (s_id, s_phone)
+#             )
+#             """)
+
+
+
+# cur.execute("INSERT INTO student VALUES ('03', 'RAKIB', 'MUGDA', '01533610185', 'AB+')")
+
+res = cur.execute("SELECT * FROM student")
 
 
 con.commit()
