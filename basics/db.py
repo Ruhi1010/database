@@ -51,10 +51,31 @@ cur = con.cursor()
 
 # cur.execute("INSERT INTO student VALUES ('03', 'RAKIB', 'MUGDA', '01533610185', 'AB+')")
 
-res = cur.execute("SELECT * FROM student")
+# cur.execute("CREATE TABLE employee('name', 'age', 'salary', 'department', 'ID')")
 
+# cur.execute("INSERT INTO employee VALUES ('Ruhi', '22', '500000', 'HR', '01')")
 
-con.commit()
+# cur.execute("INSERT INTO employee VALUES ('Rakib', '23', '200000', 'ADMIN', '01')")
+
+# cur.execute("""
+#             UPDATE employee
+#             SET department = 'IT'
+#             WHERE name = 'Rakib'
+#             """)
+
+# cur.execute("""
+#             INSERT INTO employee VALUES
+#             ('Rishat', '30', '100000', 'IT', '03'),
+#             ('Rahim', '25', '80000', 'HR', '05'),
+#             ('Rana', '27', '70000', 'ADMIN', '04')
+#             """)
+
+cur.execute("DELETE FROM employee WHERE ID = '05'")
+
+res = cur.execute("SELECT * FROM employee")
 
 
 print(res.fetchall())
+
+
+con.commit()
