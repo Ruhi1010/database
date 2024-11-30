@@ -98,10 +98,32 @@ WHERE [Condition] /* Must check the condition very carefully*/
 
 ### How to take inputs in more than one rows
 ```SQL
-cur.execute("""
-            INSERT INTO table_name VALUES
-            ('value1', 'value2',....,'valueN'),
-            ('value1', 'value2',....,'valueN'),
-            ('value1', 'value2',....,'valueN')
-            """)
+INSERT INTO table_name VALUES
+('value1', 'value2',....,'valueN'),
+('value1', 'value2',....,'valueN'),
+('value1', 'value2',....,'valueN')                    
 ```
+
+### How to set a column as a primary key in sqlite3
+
+- Rename the existing table.
+```SQL
+ALTER TABLE table_name RENAME TO new_table_name;
+```
+- Make a new table with the same name as the old table.
+```SQL
+CREATE TABLE table_name(column1, column2, column3, ...);
+```
+- Set a primary key in the new table.
+```SQL
+CREATE TABLE table_name(column1, column2, column3 PRIMARY KEY, ...);
+``` 
+- Copy the whole old table to the new table.
+```SQL
+INSERT INTO new_table_name SELECT * FROM old_table_name;
+```
+- Remove the old table.
+```SQL
+DROP TABLE old_table_name;
+```
+- After all steps we don't insert the same multiple values into that column which is define as a primary key.

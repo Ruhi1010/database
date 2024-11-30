@@ -70,7 +70,22 @@ cur = con.cursor()
 #             ('Rana', '27', '70000', 'ADMIN', '04')
 #             """)
 
-cur.execute("DELETE FROM employee WHERE ID = '05'")
+# cur.execute("DELETE FROM employee WHERE ID = '05'")
+
+
+# cur.execute("ALTER TABLE employee RENAME TO old_employee")
+
+
+# cur.execute("CREATE TABLE employee(name, age, salary, department, ID PRIMARY KEY)")
+
+
+# cur.execute("INSERT INTO employee SELECT * FROM old_employee")
+
+
+# cur.execute("DROP TABLE old_employee")
+
+cur.execute("INSERT INTO employee VALUES('Karim', '30', '850000', 'HR', '01')")
+
 
 res = cur.execute("SELECT * FROM employee")
 
