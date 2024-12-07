@@ -127,3 +127,11 @@ INSERT INTO new_table_name SELECT * FROM old_table_name;
 DROP TABLE old_table_name;
 ```
 - After all steps we don't insert the same multiple values into that column which is define as a primary key.
+
+
+## How to set foreign key in a table
+- A foreign key is a column or columns of data in one table that refers to the unique data values -- often the primary key data -- in another table. Foreign keys link together two or more tables in a relational database.
+```SQL
+CREATE TABLE table_name(column1, column2, column3,....,columnN, FOREIGN kEY (column_number) REFERENCES table_name(column))
+```
+- After the REFERENCES we take a table name which contains the foreign key column as primary key in its own table. When we insert a foreign key in another table we just set that primary key and give reference the mother/parent table.

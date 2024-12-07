@@ -84,10 +84,32 @@ cur = con.cursor()
 
 # cur.execute("DROP TABLE old_employee")
 
-cur.execute("INSERT INTO employee VALUES('Karim', '30', '850000', 'HR', '01')")
+# cur.execute("INSERT INTO employee VALUES('Karim', '30', '850000', 'HR', '01')")
 
 
-res = cur.execute("SELECT * FROM employee")
+# cur.execute("CREATE TABLE c_students(s_id PRIMARY KEY, name, phone)")
+
+#cur.execute("CREATE TABLE courses(c_id PRIMARY KEY, course_name, s_id, FOREIGN KEY(s_id) REFERENCES c_students(s_id))")
+
+
+# cur.execute("""
+#             INSERT INTO c_students VALUES ('01', 'John Doe', '0123456789'),
+#             ('2', 'Alice', '01236547891')
+#             """)
+
+
+# cur.execute("""
+#             INSERT INTO courses VALUES ('C 1001', 'Structure Programming Language', '01'),
+#             ('C 1002', 'Structure Programming Language Lab', '02')
+#             """)
+
+
+
+
+# cur.execute("DROP TABLE courses")
+
+
+res = cur.execute("SELECT * FROM c_students")
 
 
 print(res.fetchall())
